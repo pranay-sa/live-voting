@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LIVE VOTING RESULTS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #result{
+            text-align: right;
+            margin-top: -135%;
+        }
+    </style>
+  </head>
+  <body>
+    <div
+      class="poll-container bg-cyan-100 p-8 rounded shadow-md max-w-md place-content-center m-7" id="center">
+      <h2 class="text-2xl font-bold mb-4">Live Voting Results</h2>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option1"
+          onclick="showResult('APPLE')"
+          class="mr-2"
+        />
+        <label for="option1">APPLE</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option2"
+          onclick="showResult('BANANA')"
+          class="mr-2"
+        />
+        <label for="option2">BANANA</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option3"
+          onclick="showResult('CARROT')"
+          class="mr-2"
+        />
+        <label for="option3">CARROT</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option4"
+          onclick="showResult('CHERRY')"
+          class="mr-2"
+        />
+        <label for="option4">CHERRY</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option5"
+          onclick="showResult('GRAPES')"
+          class="mr-2"
+        />
+        <label for="option5">GRAPES</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option6"
+          onclick="showResult('MUSHROOM')"
+          class="mr-2"
+        />
+        <label for="option6">MUSHROOM</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option7"
+          onclick="showResult('PINEAPPLE')"
+          class="mr-2"
+        />
+        <label for="option7">PINEAPPLE</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option8"
+          onclick="showResult('STRAWBERRY')"
+          class="mr-2"
+        />
+        <label for="option8">STRAWBERRY</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option9"
+          onclick="showResult('WATERMELON')"
+          class="mr-2"
+        />
+        <label for="option9">WATERMELON</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option10"
+          onclick="showResult('ROSE')"
+          class="mr-2"
+        />
+        <label for="option10">ROSE</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option11"
+          onclick="showResult('WATER LILY')"
+          class="mr-2"
+        />
+        <label for="option11">WATER LILY</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option12"
+          onclick="showResult('HAWTHORN')"
+          class="mr-2"
+        />
+        <label for="option12">HAWTHORN</label>
+      </div>
+      <div class="option mb-4">
+        <input
+          type="radio"
+          name="vote"
+          id="option13"
+          onclick="showResult('POPPY')"
+          class="mr-2"
+        />
+        <label for="option13">POPPY</label>
+      </div>
+      <div id="result" class="font-bold"></div>
+    </div>
+    <script>
+      let voteCounts = {
+        APPLE: 0,
+        BANANA: 0,
+        CARROT: 0,
+        CHERRY: 0,
+        GRAPES: 0,
+        MUSHROOM: 0,
+        PINEAPPLE: 0,
+        STRAWBERRY: 0,
+        WATERMELON: 0,
+        ROSE: 0,
+        "WATER LILY": 0,
+        HAWTHORN: 0,
+        POPPY: 0,
+      };
+
+      function showResult(option) {
+        voteCounts[option]++;
+        document.getElementById("result").innerHTML = `
+                <p class="mb-2">You voted for ${option}</p>
+                <p class="mb-2">Voting Counts:</p>
+                <ul>
+                  <li class="mb-1">APPLE: ${voteCounts["APPLE"]}</li>
+                  <li class="mb-1">BANANA: ${voteCounts["BANANA"]}</li>
+                  <li class="mb-1">CARROT: ${voteCounts["CARROT"]}</li>
+                  <li class="mb-1">CHERRY: ${voteCounts["CHERRY"]}</li>
+                  <li class="mb-1">GRAPES: ${voteCounts["GRAPES"]}</li>
+                  <li class="mb-1">MUSHROOM: ${voteCounts["MUSHROOM"]}</li>
+                  <li class="mb-1">PINEAPPLE: ${voteCounts["PINEAPPLE"]}</li>
+                  <li class="mb-1">STRAWBERRY: ${voteCounts["STRAWBERRY"]}</li>
+                  <li class="mb-1">WATERMELON: ${voteCounts["WATERMELON"]}</li>
+                  <li class="mb-1">ROSE: ${voteCounts["ROSE"]}</li>
+                  <li class="mb-1">WATER LILY: ${voteCounts["WATER LILY"]}</li>
+                  <li class="mb-1">HAWTHORN: ${voteCounts["HAWTHORN"]}</li>
+                  <li class="mb-1">POPPY: ${voteCounts["POPPY"]}</li>
+                </ul>
+              `;
+      }
+    </script>
+  </body>
+</html>
